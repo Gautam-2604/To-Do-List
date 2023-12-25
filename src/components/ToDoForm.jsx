@@ -9,7 +9,7 @@ function TodoForm() {
     const add= (e)=>{
         e.preventDefault()
         if(!todo)
-        return addToDo({id: Date.now(), todo:todo, completed: false})
+        return addToDo({ todo:todo, completed: false})
         setTodo("")
     }
 

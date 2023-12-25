@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { ToDoProvider } from './context'
 import { useEffect } from 'react'
+import { TodoForm, TodoItem } from './components'
 
 function App() {
   const [todos, setToDos] = useState([])
@@ -45,9 +46,15 @@ function App() {
                     <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
                     <div className="mb-4">
                         {/* Todo form goes here */} 
+                        <ToDoForm />
                     </div>
                     <div className="flex flex-wrap gap-y-3">
                         {/*Loop and Add TodoItem here */}
+                        {todos.map((todo)=>(
+                          <div key={todo.id} className='w-full'>
+                              <ToDoItem todo={todo}/>
+                          </div>
+                        ))}
                     </div>
                 </div>
             </div>
