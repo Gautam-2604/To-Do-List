@@ -8,8 +8,9 @@ function TodoForm() {
 
     const add= (e)=>{
         e.preventDefault()
-        if(!todo)
-        return addToDo({ todo:todo, completed: false})
+        if(!todo.trim())
+        return;
+        addToDo({ todo:todo, completed: false})
         setTodo("")
     }
 
@@ -31,5 +32,5 @@ function TodoForm() {
     );
 }
 
-export default TodoForm;
+export { TodoForm};
 
